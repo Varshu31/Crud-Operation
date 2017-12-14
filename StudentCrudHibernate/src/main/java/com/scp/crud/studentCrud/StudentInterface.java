@@ -2,12 +2,16 @@ package com.scp.crud.studentCrud;
 
 import java.util.List;
 
+import org.hibernate.HibernateException;
+
+import com.scp.crud.studentCrud.TestStudCRUD.SearchParam;
+
 public interface StudentInterface {
-	public void addStudent(StudentClass stud);
-	public StudentClass getStudent(Integer id);
-	public void deleteStudent(int id);
-	public StudentClass updateStudent(StudentClass stud);
-	public List<StudentClass> getAllStudent();
-	public List<StudentClass> searchStudentWithCriteria(StudentClass stud);
+	public boolean addStudent(StudentClass stud) throws Exception;
+	public boolean updateStudent(StudentClass stud) throws Exception;
+	public boolean deleteStudent(int id) throws Exception;
+	public StudentClass getStudent(int id) throws Exception;
+	public List<StudentClass> getAllStudent() throws Exception;
+	public List<StudentClass> searchStudentWithCriteria(StudentClass stud,SearchParam... params) throws Exception;
 
 }
